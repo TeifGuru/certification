@@ -10,7 +10,7 @@ void Sub(int start, int end)
         return;
     }
     Sub(start,end+1);
-    System.Console.Write($"{end} ");
+    System.Console.Write($"{end}, ");
 }
 
 System.Console.WriteLine("Введите число");
