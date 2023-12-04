@@ -5,34 +5,21 @@
 
 int Sum(int m, int n)
 {
-    int sum = 0;
-    if (m < n)
-    {
-        sum = 0;
-        for (int i = m; i <= n; i++)
-        {
-            sum += i;
-        }
-    }
-    else if (n < m)
-    {
-        sum = 0;
-        for (int i = n; i <= m; i++)
-        {
-            sum += i;
-        }
-    }
-    else
-    {
-        sum = n+m;
-    }
-    return sum;
+   if(m==n)
+   {
+    return n;
+   }
+   return m+Sum(m+1,n);
 }
 
-System.Console.WriteLine("Введите первое число");
-int m = Convert.ToInt32(Console.ReadLine());
-System.Console.WriteLine("Введите второе число");
-int n = Convert.ToInt32(Console.ReadLine());
+int GetNumber(string msg)
+{
+    System.Console.WriteLine(msg);
+    return Convert.ToInt32(Console.ReadLine());
+}
 
-int sum = Sum(m, n);
-System.Console.WriteLine($"М={m}; N={n} -> {sum}");
+
+int min = GetNumber("Введите минимальное число");
+int max = GetNumber("Введите максимальное число");
+
+System.Console.WriteLine($"Мin={min}; Max={max} -> {Sum(min, max)}");
