@@ -3,17 +3,21 @@
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
-void Sub(int start, int end)
+void Sub(int N)
 {
-        if(start<end)
+    if (N > 0)
     {
-        return;
+        System.Console.Write($"{N}, ");
+        Sub(N - 1);
     }
-    Sub(start,end+1);
-    System.Console.Write($"{end}, ");
 }
 
-System.Console.WriteLine("Введите число");
-int start = Convert.ToInt32(Console.ReadLine());
-int end=1;
-Sub(start,end);
+int GetNumber(string msg)
+{
+    System.Console.WriteLine(msg);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+
+int N = GetNumber("Введите число");
+Sub(N);

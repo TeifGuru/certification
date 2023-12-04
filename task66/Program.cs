@@ -5,11 +5,11 @@
 
 int Sum(int m, int n)
 {
-   if(m==n)
-   {
-    return n;
-   }
-   return m+Sum(m+1,n);
+    if (m == n)
+    {
+        return n;
+    }
+    return m + Sum(m + 1, n);
 }
 
 int GetNumber(string msg)
